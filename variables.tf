@@ -16,6 +16,11 @@ variable "app_source" {
   default     = "helm"
   description = "Type of application source (helm, git)"
 }
+variable "automated_allow_empty" {
+  description = "Allows deleting all application resources during automatic syncing ( false by default )."
+  type        = bool
+  default     = false
+}
 variable "chart" {
   type        = string
   description = "The name of the Helm chart"

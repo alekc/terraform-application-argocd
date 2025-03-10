@@ -1,15 +1,10 @@
-variable "automated_allow_empty" {
-  description = "Allows deleting all application resources during automatic syncing ( false by default )."
-  type        = bool
-  default     = false
-}
 locals {
   main_source = {
     repoURL        = var.repo_url
     targetRevision = var.target_revision
     chart          = var.chart
     path           = var.path
-    helm = var.chart != null ? {
+    helm = (var.chart != null || var.app_source == "helm") ? {
       passCredentials         = var.helm_pass_credentials
       parameters              = local.helm_parameters
       fileParameters          = var.helm_files_parameters

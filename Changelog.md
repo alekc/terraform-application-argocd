@@ -1,3 +1,6 @@
+## v1.0.1
+* Even if the `chart` is null, the helm block is still populated as long as `app_source` is equal to `helm`  
+
 ## v1.0.0
 * Added support for additional sources (multiple sources in the chart)
 * `skip_crd` has been renamed to `helm_skip_crd`
